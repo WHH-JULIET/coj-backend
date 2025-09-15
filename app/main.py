@@ -6,6 +6,7 @@ from app.api.admin.problems import router as admin_problems_router
 
 app = FastAPI()
 
+
 @app.get("/db-check")
 def db_check():
     try:

@@ -18,6 +18,6 @@ class ProblemTopic(Base):
 class ProblemTopicMap(Base):
     __tablename__ = "problem_topic_map"
     id = Column(String, primary_key=True)
-    problem_id = Column(String, ForeignKey("Problems.problem_id", ondelete="CASCADE"), nullable=False)
-    topic_id = Column(String, ForeignKey("Problem_Topics.topic_id", ondelete="CASCADE"), nullable=False)
+    problem_id = Column(String, ForeignKey("problems.problem_id", ondelete="CASCADE"), nullable=False)
+    topic_id = Column(String, ForeignKey("problem_topics.topic_id", ondelete="CASCADE"), nullable=False)
     __table_args__ = (UniqueConstraint('problem_id', 'topic_id', name='_problem_topic_uc'),)
